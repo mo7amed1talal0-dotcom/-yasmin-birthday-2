@@ -450,7 +450,7 @@ let p=document.getElementById("pass").value
 .replace(/-/g,"/")
 .replace(/\./g,"/");
 
-if(p=="20/7/2007"||p=="20/07/2007"){
+if(p=="20/7/2007" || p=="20/07/2007"){
 
 document.getElementById("login").style.display="none";
 
@@ -461,8 +461,8 @@ setTimeout(function(){
 document.getElementById("bar").style.width="100%";
 
 },100);
-let site=document.getElementById("site");
 
+let site=document.getElementById("site");
 
 site.classList.add("fade");
 
@@ -474,12 +474,9 @@ site.style.display="block";
 
 },2000);
 
-site.style.display="none";
-  
 hearts();
-confetti();
 
-  
+confetti();
 
 }else{
 
@@ -488,6 +485,7 @@ document.getElementById("error").innerHTML="❌ الرقم السري غير ص�
 }
 
 }
+
 function hearts(){
 
 setInterval(function(){
@@ -514,6 +512,8 @@ h.remove();
 
 }
 
+function confetti(){
+
 setInterval(function(){
 
 let c=document.createElement("div");
@@ -522,9 +522,7 @@ c.className="confetti";
 
 c.style.left=Math.random()*100+"%";
 
-c.style.background=
-["#ff2d75","#ffd93d","#00e5ff","#7b61ff","#ffffff"]
-[Math.floor(Math.random()*5)];
+c.style.background=["#ff2d75","#ffd93d","#00e5ff","#7b61ff","#ffffff"][Math.floor(Math.random()*5)];
 
 c.style.animationDuration=(3+Math.random()*3)+"s";
 
@@ -540,29 +538,6 @@ c.remove();
 
 }
 
-setInterval(function(){
-
-let h=document.createElement("div");
-
-h.className="heart";
-
-h.innerHTML=["❤️","🌹","💖","🌸"][Math.floor(Math.random()*4)];
-
-h.style.left=Math.random()*100+"%";
-
-h.style.animationDuration=(4+Math.random()*4)+"s";
-
-document.body.appendChild(h);
-
-setTimeout(function(){
-
-h.remove();
-
-},8000);
-
-},400);
-
-}
 function openImage(img){
 
 document.getElementById("viewer").style.display="flex";
