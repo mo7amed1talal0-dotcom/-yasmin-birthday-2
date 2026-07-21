@@ -111,8 +111,43 @@ opacity:0;
 }
 
 }
-  
 
+.poem-line{
+max-width:900px;
+margin:15px auto;
+padding:18px 25px;
+background:rgba(255,255,255,.12);
+border-radius:20px;
+font-size:25px;
+line-height:2;
+backdrop-filter:blur(12px);
+animation:fade .8s ease;
+}
+
+.right{
+text-align:right;
+margin-right:40px;
+margin-left:120px;
+}
+
+.left{
+text-align:left;
+margin-left:40px;
+margin-right:120px;
+}
+
+.typing{
+display:inline;
+border-left:3px solid white;
+padding-left:5px;
+animation:cursor .8s infinite;
+}
+
+@keyframes cursor{
+50%{
+border-color:transparent;
+}
+}  
 
 </style>
 
@@ -226,7 +261,7 @@ text-shadow:0 0 15px rgba(255,255,255,.4);
 🌹 إلى ياسمين 🌹
 </h3>
 
-<p style="
+<p id="intro" style="
 max-width:850px;
 margin:30px auto;
 font-size:24px;
@@ -288,13 +323,13 @@ box-shadow:0 15px 40px rgba(0,0,0,.3);
 </div>
   
 <div style="
-max-width:900px;
-margin:50px auto;
-padding:35px;
+max-width:1100px;
+margin:60px auto;
+padding:45px;
 background:rgba(255,255,255,.12);
-backdrop-filter:blur(15px);
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.25);
+backdrop-filter:blur(20px);
+border-radius:30px;
+box-shadow:0 20px 50px rgba(0,0,0,.30);
 ">
 
 <h2 style="margin-bottom:25px;">
@@ -302,34 +337,67 @@ box-shadow:0 15px 40px rgba(0,0,0,.25);
 </h2>
 
 <p style="
-font-size:24px;
-line-height:2.3;
+font-size:30px;
+line-height:2.8;
 white-space:pre-line;
+text-align:center;
+font-weight:bold;
 ">
 
+<div class="poem-line right">
 يا زهرةً فاحَ العبيرُ بشذوِها
+</div>
+
+<div class="poem-line left">
 وتألقتْ بينَ الورى بصفائِها
+</div>
 
+<div class="poem-line right">
 هذا هو الميلادُ جاءَ مبشرًا
+</div>
+
+<div class="poem-line left">
 بعامِ خيرٍ زانهُ إشراقُها
+</div>
 
+<div class="poem-line right">
 أسألُ الإلهَ بأن يديمَ سعادةً
+</div>
+
+<div class="poem-line left">
 ويزيدَ في التقوى سموَّ خُطاها
+</div>
 
+<div class="poem-line right">
 ولها النجاحُ بكلِّ دربٍ مقبلٍ
+</div>
+
+<div class="poem-line left">
 ولها الرضا، ولها المنى ومناها
+</div>
 
+<div class="poem-line right">
 ولتشرقِ الأيامُ دومًا بالهنا
+</div>
+
+<div class="poem-line left">
 ولتسكنِ الأفراحُ كلَّ رباها
+</div>
 
+<div class="poem-line right">
 ويدومُ ودُّ الأهلِ حولَ قلبِها
-ويظلُّ نورُ الخيرِ خيرَ رداها
+</div>
 
+<div class="poem-line left">
+ويظلُّ نورُ الخيرِ خيرَ رداها
+</div>
+
+<div class="poem-line right">
 كلُّ عامٍ وأنتِ بخيرٍ وسعادة.
 🤍
-</p>
-
 </div>
+
+
   <div style="
 max-width:900px;
 margin:50px auto;
@@ -477,6 +545,7 @@ site.style.display="block";
 hearts();
 
 confetti();
+document.getElementById("music").play();  
 
 }else{
 
@@ -551,8 +620,35 @@ function closeImage(){
 document.getElementById("viewer").style.display="none";
 
 }
-</script>
 
+function typeWriter(id){
+
+let text=document.getElementById(id).innerHTML;
+
+document.getElementById(id).innerHTML="";
+
+let i=0;
+
+let timer=setInterval(function(){
+
+document.getElementById(id).innerHTML+=text.charAt(i);
+
+i++;
+
+if(i>=text.length){
+
+clearInterval(timer);
+
+}
+
+},35);
+
+}
+  
+</script>
+<audio id="music" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
 </body>
   
 </html>
