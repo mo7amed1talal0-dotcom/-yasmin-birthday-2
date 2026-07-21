@@ -53,9 +53,6 @@ box-shadow:0 25px 50px rgba(0,0,0,.5);
 
 }
   
-0%{background-position:left;}
-100%{background-position:right;}
-}
 
 .fade{
 
@@ -76,7 +73,7 @@ transform:translateY(0);
 }
 
 }
-  .heart{
+.heart{
 position:fixed;
 top:-50px;
 font-size:30px;
@@ -91,11 +88,97 @@ transform:translateY(110vh) rotate(360deg);
 opacity:0;
 }
 }
+
+.confetti{
+position:fixed;
+top:-20px;
+width:12px;
+height:12px;
+border-radius:50%;
+pointer-events:none;
+z-index:99999;
+animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+
+to{
+
+transform:translateY(110vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+  
+
+
 </style>
 
 </head>
 
 <body>
+<div id="viewer" onclick="closeImage()" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+z-index:999999;
+justify-content:center;
+align-items:center;
+">
+
+<img id="bigImage"
+style="
+max-width:90%;
+max-height:90%;
+border-radius:25px;
+box-shadow:0 0 50px rgba(255,255,255,.3);
+">
+
+</div>
+<div id="loading" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#ff4fa1,#7b61ff,#4fc3ff);
+z-index:99999;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+">
+
+<h1 style="font-size:55px;">🎁</h1>
+
+<h2>جاري تجهيز المفاجأة...</h2>
+
+<div style="
+margin-top:25px;
+width:220px;
+height:8px;
+background:rgba(255,255,255,.2);
+border-radius:20px;
+overflow:hidden;
+">
+
+<div id="bar" style="
+height:100%;
+width:0%;
+background:white;
+transition:2s;
+">
+</div>
+
+</div>
+
+</div>
 
 <div id="login">
 
@@ -134,13 +217,200 @@ style="width:220px;height:220px;border-radius:50%;border:6px solid #fff;object-f
 <h2 style="margin-top:15px;">
 20 / 07 / 2007 ❤️
 </h2>
+<h3 style="
+margin-top:30px;
+font-size:34px;
+color:#fff8dc;
+text-shadow:0 0 15px rgba(255,255,255,.4);
+">
+🌹 إلى ياسمين 🌹
+</h3>
 
+<p style="
+max-width:850px;
+margin:30px auto;
+font-size:24px;
+line-height:2.2;
+padding:0 20px;
+">
+في هذا اليوم المبارك، أشرقت شمسُ عامٍ جديدٍ من عمركِ،
+فأسألُ اللهَ أن يجعله عامًا مملوءًا بالخير والبركة،
+وأن يرزقكِ السعادةَ التي لا تنقطع،
+وأن يفتح لكِ أبوابَ النجاح والتوفيق،
+وأن يجعل كلَّ خطوةٍ تخطينها سببًا في تحقيق أحلامكِ وآمالكِ.
+</p>
 <p style="font-size:22px;line-height:2;margin-top:30px;max-width:700px;margin-left:auto;margin-right:auto;">
 أتمنى لك سنة مليئة بالسعادة والنجاح وتحقيق كل أحلامك،
 وربنا يحفظك ويفرح قلبك دائمًا.
 🌹❤️
 </p>
 
+<div style="
+max-width:850px;
+margin:50px auto;
+padding:35px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+border-radius:25px;
+line-height:2.3;
+font-size:24px;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+">
+
+<h2 style="margin-bottom:25px;">
+🌹 إلى ياسمين 🌹
+</h2>
+
+<p>
+
+يا زهرةً أزهرتْ في القلبِ منزلةً  
+وزادَ حُسنُكِ في الأيامِ تزيينَا
+
+أقبلَ الميلادُ يحملُ ألفَ مبتهجٍ  
+ويبذرُ الفرحَ الغالي بساتينَا
+
+فليمنحِ اللهُ أيامًا مباركةً  
+ويجعلِ الدربَ نورًا ويقينَا
+
+ولتبلغي المجدَ حتى آخرَ الأفقِ  
+وتقطفي الحلمَ تحقيقًا وتمكينَا
+
+ولتبقَ روحُكِ البيضاءُ باسمةً  
+ما لاحَ فجرٌ وما غنّى لنا مِينَا
+
+كلُّ عامٍ وأنتِ بخيرٍ وسعادةٍ،  
+زادكِ اللهُ نجاحًا، وراحةً، وبركةً، وأدامَ عليكِ الصحةَ والعافيةَ، وجعلَ عامَكِ الجديدَ بدايةً لكلِّ أمنيةٍ جميلة.
+
+🤍🌸
+
+</p>
+
+</div>
+  
+<div style="
+max-width:900px;
+margin:50px auto;
+padding:35px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+">
+
+<h2 style="margin-bottom:25px;">
+📜 قصيدة تهنئة
+</h2>
+
+<p style="
+font-size:24px;
+line-height:2.3;
+white-space:pre-line;
+">
+
+يا زهرةً فاحَ العبيرُ بشذوِها
+وتألقتْ بينَ الورى بصفائِها
+
+هذا هو الميلادُ جاءَ مبشرًا
+بعامِ خيرٍ زانهُ إشراقُها
+
+أسألُ الإلهَ بأن يديمَ سعادةً
+ويزيدَ في التقوى سموَّ خُطاها
+
+ولها النجاحُ بكلِّ دربٍ مقبلٍ
+ولها الرضا، ولها المنى ومناها
+
+ولتشرقِ الأيامُ دومًا بالهنا
+ولتسكنِ الأفراحُ كلَّ رباها
+
+ويدومُ ودُّ الأهلِ حولَ قلبِها
+ويظلُّ نورُ الخيرِ خيرَ رداها
+
+كلُّ عامٍ وأنتِ بخيرٍ وسعادة.
+🤍
+</p>
+
+</div>
+  <div style="
+max-width:900px;
+margin:50px auto;
+padding:35px;
+background:rgba(255,255,255,.10);
+backdrop-filter:blur(18px);
+border-radius:30px;
+border:1px solid rgba(255,255,255,.2);
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+">
+
+<h2 style="
+font-size:34px;
+margin-bottom:25px;
+color:#fff8dc;
+">
+🤲 دعاء من القلب
+</h2>
+
+<p style="
+font-size:24px;
+line-height:2.3;
+">
+
+اللهم يا واسعَ الفضلِ والعطاء،
+بارك لها في عمرها،
+وألبسها لباسَ الصحةِ والعافية،
+وأدم عليها نعمةَ الطمأنينة،
+وافتح لها أبوابَ العلمِ والنجاح،
+واجعل مستقبلها أجملَ مما تتمنى،
+وارزقها فرحًا لا ينقطع،
+واجعل أيامها القادمة مليئةً بالنورِ والرضا،
+واكتب لها الخيرَ حيث كان،
+وأبعد عنها كلَّ حزنٍ وهمٍّ وسوء.
+
+اللهم حقق لها أمنياتها،
+واجعل السعادةَ رفيقةَ دربها،
+واكتب لها من التوفيقِ أوفرَ النصيب.
+
+آمين يا رب العالمين. 🤍
+
+</p>
+
+</div>
+  <div style="
+max-width:900px;
+margin:60px auto;
+padding:40px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+backdrop-filter:blur(15px);
+">
+
+<h2 style="font-size:36px;">
+💌 كلمة أخيرة
+</h2>
+
+<p style="
+font-size:26px;
+line-height:2.4;
+margin-top:25px;
+">
+
+ليسَ الميلادُ رقمًا يُضافُ إلى العمر،
+بل هو صفحةٌ جديدةٌ من كتابِ الحياة،
+أسألُ الله أن تكون كلُّ صفحاتِكِ القادمة
+مليئةً بالنجاح،
+والراحة،
+والطمأنينة،
+والسعادة التي تستحقينها.
+
+كلُّ عامٍ وأنتِ بخير،
+وكلُّ عامٍ وأنتِ أقربُ إلى أحلامكِ،
+وأقربُ إلى الله،
+وأجملُ قلبًا وروحًا.
+
+🌹🤍
+
+</p>
+
+</div>
 <div style="
 display:flex;
 flex-wrap:wrap;
@@ -149,20 +419,14 @@ gap:20px;
 margin-top:40px;
 ">
 
-<img src="./IMG_1610.png" class="gallery">
+<img src="./IMG_1610.png" class="gallery" onclick="openImage(this)">
 
-<img src="./IMG_1609.png" class="gallery">
+<img src="./IMG_1609.png" class="gallery" onclick="openImage(this)">
 
-<img src="./IMG_1615.png" class="gallery">
+<img src="./IMG_1615.png" class="gallery" onclick="openImage(this)">
 
-<img src="./IMG_1616.png" class="gallery">
-</div>
-
-</div>
-
-</div>
-  
- <h1 style="
+<img src="./IMG_1616.png" class="gallery" onclick="openImage(this)">
+<h1 style="
 margin-top:60px;
 font-size:45px;
 font-weight:900;
@@ -170,10 +434,12 @@ text-shadow:0 0 20px rgba(255,255,255,.5);
 ">
 🎂 كل سنة وإنتِ طيبة يا ياسمين 🎂
 </h1>
-</div>
 
 </div>
 
+</div>
+
+</div>
 
 <script>
 
@@ -187,13 +453,33 @@ let p=document.getElementById("pass").value
 if(p=="20/7/2007"||p=="20/07/2007"){
 
 document.getElementById("login").style.display="none";
+
+document.getElementById("loading").style.display="flex";
+
+setTimeout(function(){
+
+document.getElementById("bar").style.width="100%";
+
+},100);
 let site=document.getElementById("site");
 
-site.style.display="block";
 
 site.classList.add("fade");
 
-  hearts();
+setTimeout(function(){
+
+document.getElementById("loading").style.display="none";
+
+site.style.display="block";
+
+},2000);
+
+site.style.display="none";
+  
+hearts();
+confetti();
+
+  
 
 }else{
 
@@ -225,6 +511,69 @@ h.remove();
 },8000);
 
 },400);
+
+}
+
+setInterval(function(){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"%";
+
+c.style.background=
+["#ff2d75","#ffd93d","#00e5ff","#7b61ff","#ffffff"]
+[Math.floor(Math.random()*5)];
+
+c.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(c);
+
+setTimeout(function(){
+
+c.remove();
+
+},6000);
+
+},120);
+
+}
+
+setInterval(function(){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML=["❤️","🌹","💖","🌸"][Math.floor(Math.random()*4)];
+
+h.style.left=Math.random()*100+"%";
+
+h.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(function(){
+
+h.remove();
+
+},8000);
+
+},400);
+
+}
+function openImage(img){
+
+document.getElementById("viewer").style.display="flex";
+
+document.getElementById("bigImage").src=img.src;
+
+}
+
+function closeImage(){
+
+document.getElementById("viewer").style.display="none";
 
 }
 </script>
